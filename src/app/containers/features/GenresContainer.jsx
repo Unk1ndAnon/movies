@@ -50,7 +50,7 @@ class GenresContainer extends Component {
     };
   }
 
-  printGenres = ({ ids, cls }) => {
+  printGenres = ({ ids, className }) => {
     const { genresList: { data } } = this.props;
 
     if (isEmpty(data)) return null;
@@ -65,7 +65,7 @@ class GenresContainer extends Component {
       .join(', ');
 
     return (
-      <div className={cls}>
+      <div {...{ className }}>
         {text}
       </div>
     );

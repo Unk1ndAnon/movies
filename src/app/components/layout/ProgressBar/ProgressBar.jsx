@@ -1,11 +1,13 @@
-import 'app_components/layout/ProgressBar/ProgressBar.scss';
+// import 'app_components/layout/ProgressBar/ProgressBar.scss';
+import styles from './ProgressBar.scss';
 
 import React from 'react';
+import cn from 'classnames';
 
 export default function ProgressBar() {
   return (
-    <div className="progress cstm-progress">
-      <div className="progress-bar progress-bar-striped " />
+    <div className={cn(styles.wrapper, 'progress')}>
+      <div className={cn(styles.bar, 'progress-bar')} />
     </div>
   );
 };

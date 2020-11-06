@@ -1,4 +1,4 @@
-import './SearchForm.scss';
+import styles from './SearchForm.scss';
 
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -18,9 +18,6 @@ const SearchForm = ({ t, history }) => {
   const dispatch = useDispatch();
   const searchPlaceholder = t('movie_search.input_placeholder');
   const { search = '' } = qs.parse(history.location.search);
-
-  // console.warn('-- SearchForm.render()');
-  // console.log('history.location.search:', history.location.search);
 
   const [searchText, setSearchText] = useState(search);
 
@@ -60,16 +57,16 @@ const SearchForm = ({ t, history }) => {
   };
 
   return (
-    <form className="search-form">
+    <form className={styles.form}>
       <FontAwesomeIcon
-        className="search-icon"
+        className={styles.icon}
         icon={faSearch}
       />
       <DebounceInput
         debounceTimeout={300}
         autoComplete="off"
         spellCheck={false}
-        className={cn('form-control', { "active": searchText })}
+        className={cn(styles.input, "form-control", { "active": searchText })}
         type="text"
         name="search"
         placeholder={searchPlaceholder}

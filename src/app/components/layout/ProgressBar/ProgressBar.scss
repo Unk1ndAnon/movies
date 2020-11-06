@@ -1,49 +1,44 @@
-@import "app_assets/css/variables/colors";
+@import 'app_assets/css/variables/colors';
 
-.cstm-progress {
-  &.progress {
-    position: fixed;
-    top: 0px;
-    z-index: 2000;
-    width: 100%;
-    left: 0px;
-    height: 5px;
-    border-radius: 0px;
-    background-color: transparent;
-  }
+.wrapper:global(.progress) {
+  position: fixed;
+  top: 0px;
+  z-index: 2000;
+  width: 100%;
+  left: 0px;
+  height: 5px;
+  border-radius: 0px;
+  background-color: transparent;
 
-  .progress-bar {
+  .bar {
     background-color: rgba(245, 205, 0, 0.9);
     animation: load-width 2s cubic-bezier(0.45, 0, 1, 1) infinite;
+    $rgba-striped: rgba(255, 255, 255, 0.4);
+    background-image: linear-gradient(
+      45deg,
+      $rgba-striped 25%,
+      transparent 25%,
+      transparent 50%,
+      $rgba-striped 50%,
+      $rgba-striped 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 1rem 1rem;
+  }
+}
 
-    &.progress-bar-striped {
-      $rgba-striped: rgba(255, 255, 255, 0.4);
-      background-image: linear-gradient(
-        45deg,
-        $rgba-striped 25%,
-        transparent 25%,
-        transparent 50%,
-        $rgba-striped 50%,
-        $rgba-striped 75%,
-        transparent 75%,
-        transparent
-      );
-      background-size: 1rem 1rem;
-    }
+@keyframes load-width {
+  0%,
+  100% {
+    transition-timing-function: cubic-bezier(1, 0, 0.25, 0.85);
   }
 
-  @keyframes load-width {
-    0%,
-    100% {
-      transition-timing-function: cubic-bezier(1, 0, 0.25, 0.85);
-    }
+  0% {
+    width: 0;
+  }
 
-    0% {
-      width: 0;
-    }
-
-    100% {
-      width: 100%;
-    }
+  100% {
+    width: 100%;
   }
 }

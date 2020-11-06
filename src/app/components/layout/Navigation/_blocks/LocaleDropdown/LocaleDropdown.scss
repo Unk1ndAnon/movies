@@ -1,4 +1,4 @@
-@import "app_assets/css/variables/colors";
+@import 'app_assets/css/variables/colors';
 
 $border-color: $black-btn-border;
 
@@ -8,7 +8,7 @@ $border-color: $black-btn-border;
   background-color: $black_mod !important;
 }
 
-.locale-dropdown__wrapper {
+.dropdown {
   width: 60px;
 
   @media (max-width: 576px) {
@@ -16,7 +16,7 @@ $border-color: $black-btn-border;
     width: 55px;
   }
 
-  .dropdown-menu {
+  .menu {
     width: auto;
     min-width: auto;
     background-color: $black_mod;
@@ -26,7 +26,7 @@ $border-color: $black-btn-border;
       font-size: 14px;
     }
 
-    .dropdown-item {
+    .item {
       color: $lightgray;
 
       &:hover {
@@ -36,7 +36,7 @@ $border-color: $black-btn-border;
     }
   }
 
-  .btn {
+  .button {
     @include btn-style;
 
     @media (max-width: 576px) {

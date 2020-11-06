@@ -1,9 +1,4 @@
-@import "app_assets/css/variables/base_classes";
-@import "app_assets/css/variables/colors";
-
-$b: $movies-list-base-cls;
-$b_grid: "#{$b}-grid";
-$b_card: "#{$b}-card";
+@import 'app_assets/css/variables/colors';
 
 $title-text-color: $white_mod;
 $genres-text-color: $lightblue;
@@ -15,33 +10,23 @@ $genres-text-color: $lightblue;
   white-space: nowrap;
 }
 
-.#{$b} {
-  .#{$b_card} {
-    &:hover {
-      text-decoration: none;
-      transform: scale(1.1);
-      cursor: pointer;
-    }
+.body {
+  flex: 1 1 auto;
+  position: relative;
+  padding: 0.3rem;
 
-    &__body {
-      flex: 1 1 auto;
-      position: relative;
-      padding: 0.3rem;
+  // padding: 5px 10px;
+  // background-color: rgba(0, 0, 0, 0.5);
+  // border-radius: 0px 0px 8px 8px;
+}
 
-      // padding: 5px 10px;
-      // background-color: rgba(0, 0, 0, 0.5);
-      // border-radius: 0px 0px 8px 8px;
-    }
+.title {
+  @include text-ellipsis;
+  line-height: 1.2;
+  color: $title-text-color;
+}
 
-    &__title {
-      @include text-ellipsis;
-      line-height: 1.2;
-      color: $title-text-color;
-    }
-
-    &__genres {
-      @include text-ellipsis;
-      color: $genres-text-color;
-    }
-  }
+.genres {
+  @include text-ellipsis;
+  color: $genres-text-color;
 }

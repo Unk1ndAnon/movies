@@ -1,41 +1,34 @@
-import './CardImageBlock.scss';
+import styles from './CardImageBlock.scss';
 
 import React from 'react';
 import PT from 'prop-types';
-import b_ from 'b_';
-
 import { withTranslation } from 'react-i18next';
+
 import { TMDB_IMAGE_URL } from 'app_config';
 import { CardRatingBlock } from
   'app_components/pages/movies-page/_blocks';
 
 function CardImageBlock(props) {
-  const { t, cls, movie } = props;
+  const { t, movie } = props;
   const { poster_path, vote_average } = movie;
 
-  const b = b_.with(cls);
-
   return (
-    <div className={b('image-wrapper')}>
-
+    <div className={styles.wrapper}>
       {poster_path
         ? (
           <img
-            className={b('image')}
+            className={styles.image}
             src={`${TMDB_IMAGE_URL.medium}/${poster_path}`}
           />
         )
         : (
-          <div className="no-image-text">
+          <div className={styles['no-image-text']}>
             {t('movie_list.empty_poster')}
           </div>
         )
       }
 
-      <CardRatingBlock
-        vote_average={vote_average}
-        cls={cls}
-      />
+      <CardRatingBlock {...{ vote_average }} />
     </div>
   );
 };

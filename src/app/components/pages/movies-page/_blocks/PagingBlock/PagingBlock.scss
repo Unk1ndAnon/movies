@@ -1,20 +1,22 @@
-@import "app_assets/css/variables/colors";
+@import 'app_assets/css/variables/colors';
 
 $a-color: $lightgray;
 $a-color--active: $white_mod;
 $a-color--hover: $white_mod;
 
-.pagination-wrapper {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  justify-content: center;
+:global {
+  .pagination-wrapper {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    justify-content: center;
 
-  @media (max-width: 992px) {
-    margin-top: 10px !important;
+    @media (max-width: 992px) {
+      margin-top: 10px !important;
+    }
   }
 }
 
-ul.pagination {
+.paging {
   @media (max-width: 576px) {
     padding: 0px 5px;
   }
@@ -39,7 +41,7 @@ ul.pagination {
       }
     }
 
-    a {
+    .link {
       padding: 5px;
       outline: none;
       cursor: pointer;
@@ -53,10 +55,7 @@ ul.pagination {
       &:hover {
         color: $yellow;
         text-decoration: none;
-
-        &:not(.pagination__link--prev):not(.pagination__link--next) {
-          font-weight: bold;
-        }
+        font-weight: bold;
       }
     }
   }

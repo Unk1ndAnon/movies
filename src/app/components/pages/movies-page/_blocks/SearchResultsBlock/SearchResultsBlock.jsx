@@ -1,28 +1,25 @@
-import './SearchResultsBlock.scss';
+import styles from './SearchResultsBlock.scss';
 
 import React from 'react';
 import PT from 'prop-types';
-import b_ from 'b_';
 import cn from 'classnames';
 
 import PTS from 'app_services/PropTypesService';
 import { withTranslation } from 'react-i18next';
 import { Row } from 'app_components/layout';
 
-function SearchResultsBlock({ t, cls_base, search, total }) {
-  const b = b_.with(cls_base);
-  const quotes = (<span className={b('quotes')}>"</span>);
-
-
+function SearchResultsBlock({ t, search, total }) {
   if (total == null || !search) return null;
 
+  const quotes = (<span className={styles.quotes}>"</span>);
+
   return (
-    <Row cls={cn(b(), 'mb-lg-2')}>
+    <Row cls={cn(styles.wrapper, 'mb-lg-2')}>
       <span>
         {t('movie_search.found.count', { count: total })}
       </span>
 
-      <span className={b('highlight')}>
+      <span className={styles.highlight}>
         {total}
       </span>
 
@@ -34,7 +31,7 @@ function SearchResultsBlock({ t, cls_base, search, total }) {
         {t('movie_search.by_title')}
       </span>
 
-      <span className={b('highlight')}>
+      <span className={styles.highlight}>
         {quotes}{search}{quotes}
       </span>
     </Row>
@@ -43,7 +40,6 @@ function SearchResultsBlock({ t, cls_base, search, total }) {
 
 SearchResultsBlock.propTypes = {
   t: PT.func.isRequired,
-  cls_base: PT.string,
   search: PT.string,
   total: PTS.nullOrNumber
 };

@@ -1,4 +1,4 @@
-import './LocaleDropdown.scss';
+import styles from './LocaleDropdown.scss';
 
 import React, { useState, useEffect } from 'react';
 import PT from 'prop-types';
@@ -6,6 +6,7 @@ import { withTranslation } from 'react-i18next';
 import { withRouter } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import qs from 'query-string';
+import cn from 'classnames';
 
 import { redirect } from 'app_history';
 import { isNotEmpty } from 'app_services/UtilsService';
@@ -18,9 +19,6 @@ const LocaleDropdown = (props) => {
 
   const defaultLang = findLang(langQuery);
   const [lang, setLang] = useState(defaultLang);
-
-  // console.warn('-- LocaleDropdown.render()');
-  // console.log('lang:', lang);
 
   useEffect(() => {
     // console.warn('-- LocaleDropdown.useEffect()');
@@ -75,10 +73,10 @@ const LocaleDropdown = (props) => {
   };
 
   return (
-    <div className="locale-dropdown__wrapper">
+    <div className={styles.dropdown}>
       <div className="dropdown">
         <button
-          className="btn btn-secondary dropdown-toggle"
+          className={cn(styles.button, 'btn btn-secondary dropdown-toggle')}
           type="button"
           id="dropdownMenuButton"
           data-toggle="dropdown"
@@ -86,11 +84,11 @@ const LocaleDropdown = (props) => {
           {lang.label}
         </button>
 
-        <div className="dropdown-menu">
+        <div className={cn(styles.menu, 'dropdown-menu')}>
           {LANGUAGES.map((item) =>
             <a
               key={uuidv4()}
-              className="dropdown-item"
+              className={cn(styles.item, 'dropdown-item')}
               href=""
               onClick={(e) => onLangChange(e, location, item)}
             >

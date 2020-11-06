@@ -1,4 +1,4 @@
-import './Layout.scss';
+import styles from './Layout.scss';
 
 import React, { Fragment } from 'react';
 import PT from 'prop-types';
@@ -9,7 +9,7 @@ const Layout = (props) => {
   return (
     <Fragment>
       <Header />
-      <main className="layout">
+      <main className={styles.layout}>
         <div className="container position-relative p-0">
           <Backdrop />
           {props.children}

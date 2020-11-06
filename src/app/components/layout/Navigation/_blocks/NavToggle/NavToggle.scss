@@ -1,12 +1,12 @@
-.nav-toggle__row {
+.toggle {
   width: 100%;
   padding: 0px 0px 0px 5px;
 
   @media (max-width: 576px) {
     padding: 10px 0px 0px 0px;
   }
-  
-  &.row {
+
+  &:global(.row) {
     margin: 0px;
   }
 }

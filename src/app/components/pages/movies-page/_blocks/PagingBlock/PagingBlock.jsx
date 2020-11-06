@@ -1,24 +1,18 @@
-import './PagingBlock.scss';
+import styles from './PagingBlock.scss';
 
 import React from 'react';
 import PT from 'prop-types';
-import b_ from 'b_';
 import cn from 'classnames';
 import ReactPaginate from "react-paginate";
 
 import PTS from 'app_services/PropTypesService';
 import withMoviesNav from 'app_hocs/withMoviesNav';
 
-function PagingBlock(props) {
-  const { cls, initialPage, pageCount, linkPage } = props;
-
-  const cls_base = 'pagination';
-  const b = b_.B({ modSeparator: '--' }).with(cls_base);
-
+function PagingBlock({ className, initialPage, pageCount, linkPage }) {
   return (
     <ReactPaginate
-      previousLabel="&larr;"
-      nextLabel="&rarr;"
+      previousLabel="<-"
+      nextLabel="->"
       breakLabel="..."
       breakClassName="break-me"
       pageCount={pageCount}
@@ -28,20 +22,21 @@ function PagingBlock(props) {
       disableInitialCallback={true}
       initialPage={initialPage}
       forcePage={initialPage}
-      containerClassName={cn(b(), cls)}
-      activeClassName="active"
+      containerClassName={cn(styles.paging, className, 'pagination')}
+      activeClassName={styles.active}
+
       // we need specify that classes because of bootstrap reboot styles (for not to override them)
-      pageLinkClassName={b('link')}
-      previousLinkClassName={b('link', { prev: true })}
-      nextLinkClassName={b('link', { next: true })}
-      breakLinkClassName={b('link', { break: true })}
+      pageLinkClassName={styles.link}
+      previousLinkClassName={styles.link}
+      nextLinkClassName={styles.link}
+      breakLinkClassName={styles.link}
     />
   );
 };
 
 PagingBlock.propTypes = {
+  className: PT.string,
   linkPage: PT.func.isRequired,
-  cls: PT.string,
 
   initialPage: PT.number.isRequired,
   pageCount: PTS.nullOrNumber

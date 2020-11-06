@@ -1,4 +1,4 @@
-@import "app_assets/css/variables/colors";
+@import 'app_assets/css/variables/colors';
 
 $border-radius: 6px;
 $border-color: $black-btn-border;
@@ -9,36 +9,35 @@ $border-color: $black-btn-border;
   background-color: $purple !important;
 }
 
-.toolbar-wrapper {
+:global(.toolbar-wrapper) {
   @media (max-width: 576px) {
     padding-right: 0px !important;
   }
 }
 
-.movies-filter {
+.group {
   border-radius: 8px;
-
   width: 100%;
-  .btn {
+
+  .button {
     color: $white_mod;
     z-index: 0 !important;
     min-height: 38px;
     line-height: 1;
     word-break: break-all;
-    
+
     @media (max-width: 576px) {
       font-size: 14px;
       padding: 3px;
     }
 
-    &-light {
-
+    &:global(.btn-light) {
       color: #afb5ba;
       border-color: $border-color;
       background-color: rgba(0, 0, 0, 0.5);
     }
 
-    &-dark {
+    &:global(.btn-dark) {
       @include dark-btn-style;
     }
 

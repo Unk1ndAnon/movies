@@ -1,8 +1,7 @@
-import './CardBlock.scss';
+import styles from './CardBlock.scss';
 
 import React from 'react';
 import PT from 'prop-types';
-import b_ from 'b_';
 import cn from 'classnames';
 
 import withMoviesNav from 'app_hocs/withMoviesNav';
@@ -10,29 +9,27 @@ import { CardImageBlock } from
   'app_components/pages/movies-page/_blocks';
 
 function CardBlock(props) {
-  const { cls, movie, printGenres, linkMovie } = props;
+  const { className, movie, printGenres, linkMovie } = props;
   const { id, title, genre_ids } = movie;
-
-  const b = b_.with(cls);
 
   return (
     <div
-      className={cn(b(), 'mx-auto')}
+      className={cn(className, 'mx-auto')}
       onClick={() => linkMovie(id)}
     >
       <CardImageBlock
-        cls={cls}
+        // className={className}
         movie={movie}
       />
 
-      <div className={b('body')}>
-        <div className={cn(b('title'), 'mb-1')}>
+      <div className={styles.body}>
+        <div className={cn(styles.title, 'mb-1')}>
           {title}
         </div>
 
         {genre_ids && printGenres({
           ids: genre_ids,
-          cls: cn(b('genres'), 'small')
+          className: cn(styles.genres, 'small')
         })}
       </div>
     </div>

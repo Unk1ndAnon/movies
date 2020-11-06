@@ -1,4 +1,4 @@
-import './Backdrop.scss';
+import styles from './Backdrop.scss';
 
 import React from 'react';
 import PT from 'prop-types';
@@ -18,9 +18,9 @@ function Backdrop(props) {
 
   return (
     <div
-      className={cn('backdrop fixed-top',
-        { "backdrop--main": !backdrop_path }
-      )}
+      className={cn(styles.backdrop, {
+        [styles.main]: !backdrop_path
+      })}
       style={style}
     />
   );

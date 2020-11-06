@@ -77,7 +77,6 @@ class MoviesListContainer extends Component {
         {isLoading && <ProgressBar />}
 
         <SearchResultsBlock
-          cls_base={`${cls_base}-search-results`}
           search={search}
           total={total_results}
         />
@@ -91,7 +90,7 @@ class MoviesListContainer extends Component {
 
           {(hasMovies && total_results > 20) && (
             <div className="col-12 col-lg p-0 pagination-wrapper">
-              <PagingBlock cls="justify-content-lg-end m-0"
+              <PagingBlock className="justify-content-lg-end m-0"
                 {...props_paging}
               />
             </div>
@@ -99,12 +98,12 @@ class MoviesListContainer extends Component {
         </Row>
 
         <GenresContainer>
-          <ListBlock cls_base={cls_base} movies={results} />
+          <ListBlock movies={results} />
         </GenresContainer>
 
         {(hasMovies && total_results > 20) && (
           <Row cls="pagination-wrapper mt-3">
-            <PagingBlock cls="m-0" {...props_paging} />
+            <PagingBlock className="m-0" {...props_paging} />
           </Row>
         )}
       </div >

@@ -1,10 +1,11 @@
-import './NavToggle.scss';
+import styles from './NavToggle.scss';
 
-import React, { Fragment } from 'react';
+import React from 'react';
+import cn from 'classnames';
 
 const NavToggle = (props) => {
   return (
-    <Fragment>
+    <>
       <button
         className="navbar-toggler"
         type="button"
@@ -20,11 +21,11 @@ const NavToggle = (props) => {
         className="collapse navbar-collapse"
         id="moviesNavbarToggle"
       >
-        <div className="row nav-toggle__row">
+        <div className={cn(styles.toggle, 'row')}>
           {props.children}
         </div>
       </div>
-    </Fragment>
+    </>
   );
 }
 

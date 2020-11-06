@@ -1,24 +1,18 @@
-import './Navigation.scss';
+import styles from './Navigation.scss';
 
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import cn from 'classnames';
-import qs from 'query-string';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
+import cn from 'classnames';
+import qs from 'query-string';
 
 import { redirect } from 'app_history';
-
 import { getDefaulQueryParams, getQueryParams } from 'app_services/UtilsService';
+import { NavToggle, LocaleDropdown, SearchForm } from 'app_components/layout/Navigation/_blocks/';
 import { resetMovies, getMovies } from 'redux_actions';
-import {
-  NavToggle,
-  LocaleDropdown,
-  SearchForm
-} from 'app_components/layout/Navigation/_blocks/';
 
 const Navigation = () => {
-  const cls_base = 'movies-navbar';
   const dispatch = useDispatch();
 
   const goHome = (e) => {
@@ -29,19 +23,19 @@ const Navigation = () => {
       ...getDefaulQueryParams(),
       lng
     };
-  
+
     dispatch(resetMovies());
     dispatch(getMovies(requestParams));
     redirect(`/?${qs.stringify({ lng })}`);
   }
 
   return (
-    <nav className={cn(cls_base, 'navbar navbar-expand-sm navbar-dark')}>
+    <nav className={cn(styles.navigation, 'navbar navbar-expand-sm navbar-dark')}>
       <div className="container p-0">
         <a
-          href="/"
-          className="link-home"
+          className={styles.link}
           onClick={(e) => goHome(e)}
+          href="/"
         >
           <FontAwesomeIcon
             className="mr-1"

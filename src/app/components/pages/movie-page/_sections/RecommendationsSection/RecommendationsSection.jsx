@@ -33,10 +33,7 @@ function RecommendationsSection({ t, data_moviesList }) {
               </h2>
           </Message>
 
-          <ListBlock
-            cls_base={cls_base}
-            movies={movies}
-          />
+          <ListBlock movies={movies}/>
         </div >
       )}
     </Fragment>

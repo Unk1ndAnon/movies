@@ -1,25 +1,19 @@
-@import "app_assets/css/variables/base_classes";
-
-$b: $movies-list-base-cls;
-$b_grid: "#{$b}-grid";
-$b_card: "#{$b}-card";
+@import 'app_assets/css/variables/base_classes';
 
 $card-width: 200px;
 $card-width--sm: 300px;
 
-.#{$b} {
-  .#{$b_grid} {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, $card-width);
-    justify-content: space-between;
-    margin-top: 20px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $card-width);
+  justify-content: space-between;
+  margin-top: 20px;
 
-    @media screen and (max-width: 576px) {
-      grid-template-columns: repeat(auto-fill, 100%);
-    }
+  @media screen and (max-width: 576px) {
+    grid-template-columns: repeat(auto-fill, 100%);
   }
 
-  .#{$b_card} {
+  .card {
     display: flex;
     flex-direction: column;
     width: $card-width;
@@ -28,6 +22,12 @@ $card-width--sm: 300px;
 
     @media screen and (max-width: 576px) {
       width: $card-width--sm;
+    }
+
+    &:hover {
+      text-decoration: none;
+      transform: scale(1.1);
+      cursor: pointer;
     }
   }
 }

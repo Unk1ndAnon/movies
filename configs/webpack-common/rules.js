@@ -27,12 +27,19 @@ const rules = {
         : 'style-loader',
 
       // allows Interoperable CSS (required for sass :export syntax)
+      // modules: true
+      // modules: {
+      // compileType: 'icss'
+      // }
+
       {
         loader: 'css-loader',
         options: {
           importLoaders: 1,
           modules: {
-            compileType: 'icss'
+            localIdentName: process.env.NODE_ENV === 'development'
+              ? '[name]__[local]'
+              : '[hash:base64:5]'
           }
         }
       }

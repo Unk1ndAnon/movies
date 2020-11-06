@@ -22,7 +22,6 @@ function DescriptionSection({ transparent = true, context }) {
 
         <Column size={3} cls="p-0">
           <RatingBlock
-            cls={`${cls_base}-rating`}
             data={{ vote_average, vote_count }}
           />
         </Column>

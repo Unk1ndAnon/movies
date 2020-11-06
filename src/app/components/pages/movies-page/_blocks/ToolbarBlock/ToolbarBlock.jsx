@@ -1,26 +1,20 @@
-import './ToolbarBlock.scss';
+import styles from './ToolbarBlock.scss';
 
 import React from 'react';
 import PT from 'prop-types';
-import { v4 as uuidv4 } from 'uuid';
 import { Button, ButtonGroup } from "reactstrap";
 import { withTranslation } from 'react-i18next';
 
 import { TMDB_MOVIES_TYPES } from 'app_config';
 import withMoviesNav from 'app_hocs/withMoviesNav';
 
-function ToolbarBlock(props) {
-  const {
-    t,
-    activeMoviesType,
-    changeMoviesType
-  } = props;
-
+function ToolbarBlock({ t, activeMoviesType, changeMoviesType }) {
   return (
-    <ButtonGroup className="movies-filter">
-      {TMDB_MOVIES_TYPES.map(filter => (
+    <ButtonGroup className={styles.group}>
+      {TMDB_MOVIES_TYPES.map((filter, index) => (
         <Button
-          key={uuidv4()}
+          key={index}
+          className={styles.button}
           color={(activeMoviesType == filter.key)
             ? 'dark'
             : 'light'}

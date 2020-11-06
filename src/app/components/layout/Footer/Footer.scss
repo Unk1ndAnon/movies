@@ -1,13 +1,11 @@
-@import "app_assets/css/variables/colors";
+@import 'app_assets/css/variables/colors';
 
-$b: "footer";
-
-.#{$b} {
+.footer {
   position: absolute;
   bottom: 0;
   width: 100%;
 
-  &__link-wrapper {
+  .wrapper {
     display: inline;
     color: $lightgray;
 
@@ -16,7 +14,7 @@ $b: "footer";
     }
   }
 
-  .#{$b}__link {
+  .link {
     color: $lightgray;
 
     &:hover {
@@ -25,7 +23,7 @@ $b: "footer";
     }
   }
 
-  .tmdb-logo {
+  .logo {
     img {
       width: 85px;
       margin-top: -2px;
