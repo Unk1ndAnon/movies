@@ -29,56 +29,14 @@ Movies is a responsive React app with SSR support that utilized real movies data
 - 🍦️ SASS, Bootstrap 4 + Fontawesome 5
 
 ## Features
-#### 🎥 Watch movies lists, filtered by categories: "Now playing", "Popular", "Top rated" and "Upcoming". Pagination is supported.
-*Example: "Top rated" category, page 1 for Russian region*:
+- 🎥 Movies lists: "Now playing", "Popular", "Top rated" and "Upcoming"
+- 🎥 Searching by title
+- 🎥 Movie details (including rating, creators, actors, trailer and images)
+- 🎥 Recommendations 
+- 🎥 Localization support
 
-<img src="src/assets/img/readme-images/screens/screen_1.png">
 
-#### 🎥 Search movies by title
-*Example: Found 60 movies by search query "Terminator":*
-
-<img src="src/assets/img/readme-images/screens/screen_2.png">
-
-#### 🎥 Watch movie details
-- original title, genres, production countries, release date, duration
-- creators: director, writing, director of photography, original music composer, actors
-- movie rating based on TMDb users votes
-- tagline and overview
-- poster
-- YouTube trailer 
-- and big cool backdrop image
-
-*Example: movie details for "The Big Lebowski" (1998):*
-
-<img src="src/assets/img/readme-images/screens/screen_3.png">
-
-#### 🎥 Watch actors list
-*Example: actors list for "The Usual Suspects" (1995):*
-
-<img src="src/assets/img/readme-images/screens/screen_4.png">
-
-#### 🎥 Watch image gallery in fullscreen mode
-*Example: Fullscreen image gallery for "Reservoir Dogs" (1992):*
-
-<img src="src/assets/img/readme-images/screens/screen_5.png">
-
-#### 🎥 Watch recommendations
-*Example: recommendations for "Ice Age" (2002):*
-
-<img src="src/assets/img/readme-images/screens/screen_6.png">
-    
-#### 🎥 Switch localizations
-
-EN (English) and RU (Russian) languages are available. 
-With locale changing also changes movie displayed data (in relation with selected language): title, tagline, description, poster, videos.
-
-*Example: English localization for "Avengers: Endgame" (2019):*
-
-<img src="src/assets/img/readme-images/screens/screen_7.png">
-
-*Example: Russian localization for "Avengers: Endgame" (2019):*
-
-<img src="src/assets/img/readme-images/screens/screen_8.png">
+<img src="src/assets/img/readme-images/demo.gif">
 
 ## NPM scripts
 #### Installation
