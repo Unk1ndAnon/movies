@@ -8,7 +8,7 @@ import { ProgressBar } from '@/layout';
 
 function PlayerBlock(props) {
   const { trailer } = props;
-  const isLight = true;
+  const isLight = false;
 
   if (!trailer) return null;
 
