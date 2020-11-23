@@ -36,24 +36,33 @@ Movies is a responsive React app with SSR support that utilized real movies data
 
 *Example of `.env` file you could find in `/configs/env/.env.defaults` file.*
 
-#### Development
+<details> 
+  <summary>Development</summary>
 - `npm run dev:client` (`npm run dev`) - launch client-side React app by Webpack Dev Server with HMR *(by default available on [localhost:8080](http://localhost:8080))*. *If your changes affects only client-side, running this script will be enough for you.*
 - `npm run dev:server` - launch server-side Express app by Nodemon tool for hosting `/dist/client/` folder *(by default available on [localhost:8081](http://localhost:8081))*. *This script useful if you want to change server-side behavior or work with client-side as Express-hosted app.*
+</details>
 
-#### Production
+<details> 
+  <summary>Production</summary>
 - `npm run build` - build client and server for production
 - `npm start` - launch built Express server for hosting `/dist/client/` folder 
+</details>
 
-#### Testing
+<details> 
+  <summary>Testing</summary>
 - `npm run cypress` - open Cypress test runner 
 - `npm run cypress:run` - run Cypress tests to completion
 - `npm test` - start Webpack Dev Server, wait for a url to respond, then run Cypress tests. When the test process exits, shut down Webpack Dev Server
+</details>
 
-#### Linting
+<details> 
+  <summary>Linting</summary>
 - `npm run lint` - run ESLint with `./**` search pattern 
 - `npm run lint:fix` - run ESLint with `--fix` flag
+</details>
 
-## 🔧 Environment variables
+
+### 🔧 Environment variables
 
 There is some environment variables with default values stored in `/configs/env/.env.defaults`
 
@@ -66,13 +75,13 @@ There is some environment variables with default values stored in `/configs/env/
 | `RENDERING` | `client` | Application rendering type. Available values: `client` or `server` |
 | `DEBUG_MODE` | `1` | Debug mode. Available values: `0` or `1`. Enables Express log with `morgan` logger and Redux log with `redux-logger` |
 
-## 🍦️ Roadmap
+### 🍦️ Roadmap
 - 🔲 QA: write more e2e tests, add unit tests (Jest)
 - 🔲 CI/CD: add docker images for isolated environment (app running and testing)
 - 🔲 setup: static type checking (Flow), authorization (Firebase)
 - 🔲 features: wishlist, genres filter
 
-## ✌️ About
+### ✌️ About
 
 This product uses the TMDb API but is not endorsed or certified by TMDb.
 
