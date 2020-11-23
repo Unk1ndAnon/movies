@@ -6,6 +6,15 @@ Movies is a responsive React app with SSR support that utilized real movies data
 
 ### 🏄 Demo: [nk11dev-movies.herokuapp.com](https://nk11dev-movies.herokuapp.com/)
 
+### 🎥 Features
+- Filter movies by category: "Now playing", "Popular", "Top rated" and "Upcoming"
+- Search movies
+- Switch localizations
+- Watch movie details (including trailer, actors and images)
+- Watch recommendations
+
+<img src="src/assets/img/readme-images/demo.gif">
+
 ### 🚀 Technologies
 - Babel 7
 - Webpack 4
@@ -18,15 +27,6 @@ Movies is a responsive React app with SSR support that utilized real movies data
 - React Router 4
 - React i18next for multi language support
 - SASS, Bootstrap 4 + Fontawesome 5
-
-### 🎥 Features
-- Filter movies by category: "Now playing", "Popular", "Top rated" and "Upcoming"
-- Search movies
-- Switch localizations
-- Watch movie details (including trailer, actors and images)
-- Watch recommendations
-
-<img src="src/assets/img/readme-images/demo.gif">
 
 ### 💻 NPM scripts
 
@@ -74,6 +74,9 @@ Movies is a responsive React app with SSR support that utilized real movies data
 
 There is some environment variables with default values stored in `/configs/env/.env.defaults`
 
+<details> 
+  <summary>Variables list</summary>
+
 | Variable         | Default            | Description                                                      
 | ---------------- | ------------------ |------------------ |
 | `TMDB_API_KEY` | none | Your TMDb API key, used by internal module `API.js` for fetching movies data |
@@ -82,6 +85,7 @@ There is some environment variables with default values stored in `/configs/env/
 | `PORT_SERVER` | `8081` | Port used by express for nodemon/production modes |
 | `RENDERING` | `client` | Application rendering type. Available values: `client` or `server` |
 | `DEBUG_MODE` | `1` | Debug mode. Available values: `0` or `1`. Enables Express log with `morgan` logger and Redux log with `redux-logger` |
+</details>
 
 ### 🍦️ Roadmap
 - 🔲 QA: write more e2e tests, add unit tests (Jest)
