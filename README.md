@@ -29,27 +29,34 @@ Movies is a responsive React app with SSR support that utilized real movies data
 <img src="src/assets/img/readme-images/demo.gif">
 
 ### 💻 NPM scripts
-#### Installation
+
+<details> 
+  <summary>Installation</summary>
+  
 - `npm install`
 
 *Notation: if you want to clone this app and use it by yourself, you should register account at TMDb and use your own TMDb API key. For getting API to work you should create `.env` file at the root folder and put in `TMDB_API_KEY` variable with your TMDb API key as value.*
 
 *Example of `.env` file you could find in `/configs/env/.env.defaults` file.*
+</details>
 
 <details> 
   <summary>Development</summary>
+
 - `npm run dev:client` (`npm run dev`) - launch client-side React app by Webpack Dev Server with HMR *(by default available on [localhost:8080](http://localhost:8080))*. *If your changes affects only client-side, running this script will be enough for you.*
 - `npm run dev:server` - launch server-side Express app by Nodemon tool for hosting `/dist/client/` folder *(by default available on [localhost:8081](http://localhost:8081))*. *This script useful if you want to change server-side behavior or work with client-side as Express-hosted app.*
 </details>
 
 <details> 
   <summary>Production</summary>
+
 - `npm run build` - build client and server for production
 - `npm start` - launch built Express server for hosting `/dist/client/` folder 
 </details>
 
 <details> 
   <summary>Testing</summary>
+
 - `npm run cypress` - open Cypress test runner 
 - `npm run cypress:run` - run Cypress tests to completion
 - `npm test` - start Webpack Dev Server, wait for a url to respond, then run Cypress tests. When the test process exits, shut down Webpack Dev Server
@@ -57,6 +64,7 @@ Movies is a responsive React app with SSR support that utilized real movies data
 
 <details> 
   <summary>Linting</summary>
+
 - `npm run lint` - run ESLint with `./**` search pattern 
 - `npm run lint:fix` - run ESLint with `--fix` flag
 </details>
